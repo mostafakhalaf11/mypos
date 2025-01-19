@@ -66,6 +66,20 @@
                             <input type="password" name="password_confirmation" class="form-control">
                         </div>
 
+                        {{-- <div class="tab-content">
+                            <label>@lang('site.roles')</label>
+                            @php
+                                $roles = ['super_admin', 'admin', 'user'];
+                            @endphp
+                            <div class="tab-pane active" id="users">
+
+                                @foreach ($roles as $role)
+                                    <label><input type="checkbox" name="roles[]" value="{{ $role}}"> @lang('site.' . $role)</label>
+                                @endforeach
+
+                            </div>
+                        </div> --}}
+
                         <div class="form-group">
                             <label>@lang('site.permissions')</label>
                             <div class="nav-tabs-custom">
@@ -96,9 +110,9 @@
                                     @endforeach
 
                                 </div><!-- end of tab content -->
-                                
+
                             </div><!-- end of nav tabs -->
-                            
+
                         </div>
 
                         <div class="form-group">

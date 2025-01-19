@@ -160,7 +160,7 @@ return [
         ],
 
         'category_id' => 'القسم',
-        'purchase_price' => 'سعر الشرلء',
+        'purchase_price' => 'سعر الشراء',
         'sale_price' => 'سعر البيع',
         'stock' => 'مخزن',
         'phone.0' => 'التلفون',

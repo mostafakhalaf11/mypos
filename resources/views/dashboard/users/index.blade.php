@@ -60,7 +60,6 @@
                                 <th>@lang('site.action')</th>
                             </tr>
                             </thead>
-                            
                             <tbody>
                             @foreach ($users as $index=>$user)
                                 <tr>
@@ -86,18 +85,14 @@
                                         @endif
                                     </td>
                                 </tr>
-                            
+
                             @endforeach
                             </tbody>
 
                         </table><!-- end of table -->
-                        
                         {{ $users->appends(request()->query())->links() }}
-                        
                     @else
-                        
                         <h2>@lang('site.no_data_found')</h2>
-                        
                     @endif
 
                 </div><!-- end of box body -->

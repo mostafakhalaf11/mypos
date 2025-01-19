@@ -7,9 +7,19 @@ use App\Http\Controllers\Dashboard\DashboardController;
 Route::group(
     ['prefix' => LaravelLocalization::setLocale() ,'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ] ], function(){
 
-    Route::prefix('dashboard') ->name('dashboard.')->group(function () {
-        Route::get('/index', 'DashboardController@index')->name('index');
-        });//end of dashboard group
+    Route::prefix('dashboard')->name('dashboard.')->middleware('auth')->group(function () {
+     Route::get('/', 'WelcomeController@index')->name('welcome');
 
+        //users routes
+        Route::resource('users', 'UserController');
+
+        //categories routes
+        Route::resource('categories', 'CategoryController');
+
+        //products routes
+        Route::resource('products', 'ProductController');
+
+
+        });//end of dashboard group
     });
 
