@@ -28,24 +28,22 @@
 
                         {{ csrf_field() }}
                         {{ method_field('post') }}
-                        
+
                         <div class="form-group">
                             <label>@lang('site.name')</label>
                             <input type="text" name="name" class="form-control" value="{{ old('name') }}">
                         </div>
-
-                       @for ($i = 0; $i < 2; $i++)
+                        @for ($i = 0; $i < 2; $i++)
                             <div class="form-group">
                                 <label>@lang('site.phone')</label>
-                                <input type="text" name="phone[]" class="form-control">
+                                <input type="text" name="phone[]" class="form-control" value="{{ old('phone.' . $i) }}">
                             </div>
-                       @endfor
+                        @endfor
 
                         <div class="form-group">
                             <label>@lang('site.address')</label>
                             <textarea name="address" class="form-control">{{ old('address') }}</textarea>
                         </div>
-                        
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i> @lang('site.add')</button>
                         </div>

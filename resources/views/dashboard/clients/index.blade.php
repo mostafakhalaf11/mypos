@@ -60,13 +60,13 @@
                                 <th>@lang('site.action')</th>
                             </tr>
                             </thead>
-                            
+
                             <tbody>
                             @foreach ($clients as $index=>$client)
                                 <tr>
                                     <td>{{ $index + 1 }}</td>
                                     <td>{{ $client->name }}</td>
-                                    <td>{{ is_array($client->phone) ? implode($client->phone, '-') : $client->phone }}</td>
+                                    <td>{{ is_array($client->phone) ? implode(',',$client->phone) : $client->phone }}</td>
                                     <td>{{ $client->address }}</td>
                                     <td>
                                         @if (auth()->user()->hasPermission('create_orders'))
@@ -92,18 +92,18 @@
                                         @endif
                                     </td>
                                 </tr>
-                            
+
                             @endforeach
                             </tbody>
 
                         </table><!-- end of table -->
-                        
+
                         {{ $clients->appends(request()->query())->links() }}
-                        
+
                     @else
-                        
+
                         <h2>@lang('site.no_data_found')</h2>
-                        
+
                     @endif
 
                 </div><!-- end of box body -->

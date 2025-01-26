@@ -51,14 +51,14 @@
                 <div class="col-lg-3 col-xs-6">
                     <div class="small-box bg-red">
                         <div class="inner">
-                            {{-- <h3>{{ $clients_count }}</h3> --}}
+                            <h3>{{ $clients_count }}</h3>
 
                             <p>@lang('site.clients')</p>
                         </div>
                         <div class="icon">
                             <i class="fa fa-user"></i>
                         </div>
-                        {{-- <a href="{{ route('dashboard.clients.index') }}" class="small-box-footer">@lang('site.read') <i class="fa fa-arrow-circle-right"></i></a> --}}
+                        <a href="{{ route('dashboard.clients.index') }}" class="small-box-footer">@lang('site.read') <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
 

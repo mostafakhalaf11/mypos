@@ -19,6 +19,9 @@ Route::group(
         //products routes
         Route::resource('products', 'ProductController');
 
+        //clients routes
+        Route::resource('clients', 'ClientController');
+
 
         });//end of dashboard group
     });
